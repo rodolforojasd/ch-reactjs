@@ -1,18 +1,12 @@
 import './custom.scss'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './components/Navbar/Navbar';
-import CarouselBanner from './components/CarouselBanner/CarouselBanner';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import MainRouter from './router/MainRouter.jsx';
 
 function App() {
   return (
     <div className="App">
-      <div className='container-fluid'>
-        <Navbar/>
-        <CarouselBanner/>
-        <ItemListContainer text="Bienvenido a Unión Licorera"/>
-      </div>
+      <MainRouter/>
     </div>
   );
 }
