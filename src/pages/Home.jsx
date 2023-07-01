@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from "react"
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer"
+import ItemSkeleton from "../components/ItemListContainer/ItemList/Item/ItemSkeleton";
 import CarouselBanner from "../components/CarouselBanner/CarouselBanner"
 import { getData } from "../helpers/getData";
 
@@ -29,7 +30,7 @@ const Home = () =>{
         <div>
             <CarouselBanner/>
             {loading
-            ? <h2>Loading...</h2>
+            ? <ItemListContainer items={products} loading={loading} cards={10}/>
             :<ItemListContainer items={products}/>
             }
         </div>

@@ -27,7 +27,7 @@ const Category = () =>{
      return (
         
         loading
-        ? <h2>Loading...</h2>
+        ? <ItemListContainer items={products} loading={loading} cards={6}/>
         :<ItemListContainer items = {products}/>
     )
 } 
