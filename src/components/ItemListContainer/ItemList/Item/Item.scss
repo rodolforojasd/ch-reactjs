@@ -39,65 +39,6 @@
         .card-img-top{
             aspect-ratio: 1/1;
         }
-        
-        #add_cart_button{
-                text-align: center;
-                .addtocart{
-                    @extend .btn-primary;
-                    margin-left: auto;
-                    margin-right: auto;
-                    width: 45%;
-                    height:  auto ;
-                }
-                .disable{
-                    color: lightgray;
-                    background-color: white;
-                }
-                .amount-wrapper{
-                    display: flex;
-                    font-size: var(--text-base);
-                    border: 1px solid gainsboro;
-                    border-radius: 15px 15px 15px 15px;
-                    justify-content: space-around;
-                    width: 45%;                       
-                    margin-right:auto;
-                    margin-left: auto;
-                    z-index: 4;
-                    margin-bottom: var(--spacing-xsmall);
-                    .amount-btn{
-                        width: 19%;
-                        font-weight: bold;
-                        text-align: center;
-                        z-index: index 2; 
-                        &:hover{
-                            background-color:lightgrey;
-                            color:white;
-                            font-weight: bolder;
-                        } 
 
-                    }
-                    .disabled{
-                        background-color:white;
-                        color:lightgrey; 
-                        &:hover{
-                            background-color:white;
-                            color:lightgrey; 
-                        }
-                    }
-                    .decrease-btn{
-                        border-radius: 15px 0px 0px 15px;
-                    }
-                    .increase-btn{
-                        border-radius: 0px 15px 15px 0px;
-                    }
-                    .amount-input{
-                        width: 60%;
-                        border: none;
-                        text-align: center;
-                        
-                    }  
-                }
-       
-            }
     }
 }

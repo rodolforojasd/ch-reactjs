@@ -8,12 +8,13 @@ export const CartProvider = ({children}) => {
     
     const [cart,setCart] = useState(init)
 
-    const addTocart = (item) => {
+    const addToCart = (item) => {
         setCart([...cart,item])
     }
 
     const IsInCart = (id) => {
-        return cart.some((prod)=> prod.id === id )
+        return  cart.find((prod)=> prod.id === id )
+         
     }
 
     const getCartCost = () => {
@@ -38,15 +39,15 @@ export const CartProvider = ({children}) => {
     },[cart])
 
     return (
-        <CartContext.Provider value={(
+        <CartContext.Provider value={{
                 cart,
-                addTocart,
+                addToCart,
                 IsInCart,
                 getCartCost,
                 getTotalQuantity,
                 emptyCart,
                 deleteFromCart
-            )}>
+        }}>
                 {children}
         </CartContext.Provider>
     )

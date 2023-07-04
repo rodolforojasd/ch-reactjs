@@ -3,7 +3,7 @@ import './Item.scss'
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import AmountBtn from "./AmountBtn/AmountBtn";
+
 
 
 const Item = ({item}) =>{
@@ -20,8 +20,6 @@ const Item = ({item}) =>{
                 <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
                     <Card.Text className="item-price">{"Precio: $"+item.price}</Card.Text>
-                    <AmountBtn item={item}/>
-                <Card.Text type="button" className="btn btn-secondary addtocart">{"Agregar"}</Card.Text>  
                 </Card.Body>
             </Card>
         </div>

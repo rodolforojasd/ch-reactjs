@@ -15,7 +15,7 @@ const CartWidget = ({id}) =>{
     
     id === "desktop-cart"?
     <div id={id} className="col">
-      <LinkContainer id="cart-link" className={`cart-widget ${cart.length > 0?"cart-widget-active":""}`} to={"/cart"}>
+      <LinkContainer id="desktop-cart-link" className={`cart-widget ${cart.length > 0?"cart-widget-active":""}`} to={"/cart"}>
         <span id="desktop-cart-counter">{getTotalQuantity()}</span>
       </LinkContainer>         
     </div>
@@ -24,7 +24,7 @@ const CartWidget = ({id}) =>{
       <div id={id}>      
       </div>
       <LinkContainer id="mobile-cart-link"  to={"/cart"}>
-        <span id="mobile-cart-counter">{getTotalQuantity()}</span>
+        <span id="mobile-cart-counter" >{getTotalQuantity()}</span>
       </LinkContainer>                    
      
     </div>

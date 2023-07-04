@@ -1,5 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
+import AmountBtn from "../../ItemListContainer/ItemList/Item/AmountBtn/AmountBtn"
 
 
 const ItemDetail = ({item}) =>{
@@ -24,14 +25,18 @@ const ItemDetail = ({item}) =>{
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                            <h5 className ="card-title">{item.title}</h5>
-                            <p className="card-text"> $ {item.price}</p>
-                            <p className="card-text"><small className="text-body-secondary">{item.stock}</small></p>
+                                <h5 className ="card-title">{item.title}</h5>
+                                <p className="card-text"> $ {item.price}</p>
+                                <p className="card-text"><small className="text-body-secondary">{item.stock}</small> unidades disponibles</p>
                             </div>
-                            <button  className="btn btn-primary">Comprar</button>
-                            <button  className="btn btn-primary">Agregar al carrito</button>
-                            <button onClick={backPageHanddle} className="btn btn-primary">Volver</button>
+                            <AmountBtn item={item}/>
+                                <div className="row">
+                                    <button  className="btn btn-primary">Comprar</button>
+                                    <button onClick={backPageHanddle} className="btn btn-primary">Volver</button>
+                                </div>
                         </div>
+
+                            
                     
                     </div>
                 </div>
