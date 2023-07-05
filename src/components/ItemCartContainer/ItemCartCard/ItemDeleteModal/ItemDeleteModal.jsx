@@ -1,3 +1,8 @@
+import {TrashFiLL3} from 'react-bootstrap-icons'
+
+
+
+
 const ItemDeleteModal = ({item}) =>{
      
      return (
