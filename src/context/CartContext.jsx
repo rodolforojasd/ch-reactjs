@@ -31,9 +31,6 @@ export const CartProvider = ({children}) => {
         return  cart.findIndex((prod)=> prod.id === id )
     }
 
-    const updateCart = (item, id) => {
-      
-    }
 
     const getCartCost = () => {
         return cart.reduce((acc,prod) => acc+(prod.price*prod.quantity),0)
@@ -53,8 +50,6 @@ export const CartProvider = ({children}) => {
     }
 
 
-
-
     useEffect(()=>{
         localStorage.setItem('shoppingCart', JSON.stringify(cart))
     },[cart])
@@ -65,7 +60,6 @@ export const CartProvider = ({children}) => {
         <CartContext.Provider value={{
                 cart,
                 addToCart,
-                updateCart,
                 isInCart,
                 getCartCost,
                 getTotalQuantity,
