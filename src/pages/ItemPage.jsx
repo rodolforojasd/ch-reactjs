@@ -1,31 +1,35 @@
 import { useEffect,useState } from "react"
 import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer"
 import { useParams } from "react-router-dom"
-import { getDataById } from "../helpers/getData"
+import { productManager } from "../helpers/ProductManager"
 
 const ItemPage = () =>{
 
 
-    const [product,setProduct]= useState({})
+    const [product,setProduct]= useState(null)
     const [loading, setLoading]= useState(true)
 
-    const {productId}= useParams()
+    const {itemCode}= useParams()
 
     useEffect(()=>{
-        debugger
         
-        console.log(productId)
+        setLoading(true)
+
         
-        getDataById(parseInt(productId))
-            .then((data)=>{
-                setProduct(data)
-                
+        productManager.getProductById(itemCode)
+        .then((doc) => {
+            console.log(doc.id)
+            console.log(doc.data())
+            setProduct({
+                code: doc.id,
+                ...doc.data()
             })
-            .catch((err=> console.log(err)))
-            .finally(()=>
-                setLoading(false)
-            )
-        },[productId])
+        })
+        .finally(() => setLoading(false))
+
+}, [itemCode])
+
+
 
   
 

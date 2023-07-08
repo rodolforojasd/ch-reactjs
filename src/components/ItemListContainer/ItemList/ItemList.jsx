@@ -17,7 +17,7 @@ const ItemList = ({loading,items,cards}) =>{
                 {return <ItemSkeleton key={i}/>})
                 :
                 items.map((product)=> {
-                return  <Item key={product.id} item={product} />
+                return  <Item key={product.code} item={product} />
                 })}
             </div>
         )  

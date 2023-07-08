@@ -1,12 +1,15 @@
 import React from "react";
 import ItemCartCard from "./ItemCartCard/ItemCartCard";
 
-const ItemCartContainer = ({items}) =>{
-     
+
+const ItemCartContainer = ({items, cartPage}) =>{
+
+   
+   
      return (
         <div>
-        {items.map((product)=>{
-            return <ItemCartCard key={product.id} item={product}/>
+        {items.map((product, index)=>{
+            return <ItemCartCard key={product.id} item={product} index={index} cartPage={cartPage}/>
         })
         }
         </div>

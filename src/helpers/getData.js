@@ -2,6 +2,7 @@
 import data from '../database/products.json' 
 
 export const getData = () => {
+    
     return new Promise((resolve, reject) => {
         // cuerpo de la promesa
         setTimeout(() => {

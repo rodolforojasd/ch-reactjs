@@ -1,20 +1,27 @@
-import { getData } from '../helpers/getData.js'
+
 import { db } from './config.js'
 import { addDoc, collection } from 'firebase/firestore'
+import rawData from '../database/products.json' 
 
-// const data = PRODUCTS.map((item) => {
-//     delete item.id
-//     return item
-// })
+const data = rawData.map((item) => {
+    delete item.id
+    delete item.code
+    return item
+})
+
+
+
 
 
 export async function backupData(){
-    const products = await getData()
-    const productosRef = collection(db, 'products')
+    
+    const productosRef = collection(db, 'productsRJ')
 
-    products.forEach((item) => {
+    data.forEach((item) => {
         addDoc(productosRef, item)
+
 })
+
 
 }
 

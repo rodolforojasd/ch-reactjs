@@ -22,7 +22,9 @@ const Navibar = () =>{
                     </LinkContainer>
                 </div>
 
-                <LinkContainer to={"/carrito"}><CartWidget id="desktop-cart"/></LinkContainer>
+                <LinkContainer to={"/cart"}>
+                    <CartWidget id="desktop-cart"/>
+                </LinkContainer>
                 
             </div>
 
@@ -76,7 +78,7 @@ const Navibar = () =>{
                         </Nav>
                     </ Navbar.Collapse>
 
-                    <LinkContainer to={"/carrito"}><CartWidget id="mobile-cart"/></LinkContainer>
+                    <LinkContainer to={"/cart"}><CartWidget id="mobile-cart"/></LinkContainer>
                 </Container>
                     
 

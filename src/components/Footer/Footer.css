@@ -1,0 +1,102 @@
+#footer-section {
+  background-color: black;
+  color: white;
+  padding-left: var(--spacing-small);
+  padding-right: var(--spacing-small);
+}
+#footer-section .footer_link {
+  list-style: none;
+  text-decoration: none;
+}
+#footer-section .footer_wrapper {
+  padding-top: var(--spacing-small);
+  padding-bottom: var(--spacing-xsmall);
+  justify-content: center;
+}
+#footer-section .footer_wrapper h4 {
+  font-size: 2.1rem;
+  text-align: center;
+  padding-top: var(--spacing-xsmall);
+  padding-bottom: var(--spacing-small);
+}
+#footer-section .footer_wrapper .directory-col-r {
+  margin: 0;
+  padding-right: 10%;
+}
+#footer-section .footer_wrapper .directory-col-l {
+  margin: 0;
+  padding-left: 30%;
+}
+#footer-section .footer_wrapper .footer-text {
+  font-size: var(--text-base);
+  color: white;
+}
+#footer-section .footer_wrapper #footer-newsletter {
+  width: 60%;
+  font-size: var(--text-small);
+}
+#footer-section .footer_wrapper .icon {
+  filter: brightness(100);
+  width: 11vw;
+}
+#footer-section .footer_wrapper #footer-logo {
+  width: 25vw;
+}
+#footer-section .footer_wrapper .bi {
+  display: block;
+  width: 1vw;
+  height: auto;
+  font-size: var(--text-medium);
+  padding: var(--text-base);
+}
+#footer-section .footer_wrapper .footer-payment-icon {
+  width: 9vw;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 768px), screen and (orientation: landscape) {
+  #footer-section .footer_wrapper {
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-xsmall);
+    justify-content: center;
+  }
+  #footer-section .footer_wrapper h4 {
+    font-size: 2.1rem;
+    text-align: center;
+    padding-top: var(--spacing-xsmall);
+    padding-bottom: var(--spacing-small);
+  }
+  #footer-section .footer_wrapper .directory-col-r {
+    margin: 0;
+    padding-right: 10%;
+  }
+  #footer-section .footer_wrapper .directory-col-l {
+    margin: 0;
+    padding-left: 30%;
+  }
+  #footer-section .footer_wrapper .footer-text {
+    font-size: var(--text-base);
+    color: white;
+  }
+  #footer-section .footer_wrapper #footer-newsletter {
+    width: 60%;
+    font-size: var(--text-small);
+  }
+  #footer-section .footer_wrapper .icon {
+    filter: brightness(100);
+    width: 11vw;
+  }
+  #footer-section .footer_wrapper #footer-logo {
+    width: 15vw;
+  }
+  #footer-section .footer_wrapper .bi {
+    display: block;
+    width: 5vw;
+    height: auto;
+    font-size: var(--text-medium);
+  }
+  #footer-section .footer_wrapper .footer-payment-icon {
+    width: 2.5vw;
+    padding: 0.5rem;
+  }
+}/*# sourceMappingURL=Footer.css.map */

@@ -2,6 +2,7 @@ import React, { useEffect,useState } from "react";
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
 import { useParams } from "react-router-dom";
 import { getData } from "../helpers/getData";
+import { productManager } from "../helpers/ProductManager";
 
 
 const Category = () =>{
@@ -12,16 +13,22 @@ const Category = () =>{
     const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
-        console.log(categoryId)
+       
         setLoading(true)
         
-        getData()
-            .then((data)=>{
-                setProducts(data.filter(products => products.category === categoryId))
-                setLoading(false)
+        productManager.getProducts(categoryId)
+         .then((res)=>{
+            const docs = res.docs.map((doc)=>{
+                return {...doc.data(), code: doc.id}
             })
-            .catch((err=> console.log(err)))
-
+            setProducts(docs)
+            console.log(docs)
+         })
+         .catch((err=> console.log(err)))
+         .finally(()=>{
+            setLoading(false)
+         })
+        
     },[categoryId])
 
      return (

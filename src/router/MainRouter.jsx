@@ -5,6 +5,7 @@ import Footer from '../components/Footer/Footer'
 import ItemPage from '../pages/ItemPage'
 import Home from '../pages/Home.jsx'
 import Category from '../pages/Category.jsx'
+import Cart from '../pages/Cart.jsx'
 
 const MainRouter = () =>{
      
@@ -15,7 +16,8 @@ const MainRouter = () =>{
                 
                 <Route exact path="/" element={<Home/>} />
                 <Route path="/products/:categoryId" element={<Category/>} />
-                <Route path="/detail/:productId" element={<ItemPage/>} />
+                <Route path="/detail/:itemCode" element={<ItemPage/>} />
+                <Route path="/cart" element={<Cart/>} />
 
             </Routes>
             <Footer/>

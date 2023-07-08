@@ -1,9 +1,7 @@
 import React, { useEffect,useState } from "react"
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer"
-import ItemSkeleton from "../components/ItemListContainer/ItemList/Item/ItemSkeleton";
 import CarouselBanner from "../components/CarouselBanner/CarouselBanner"
-import { getData } from "../helpers/getData";
-
+import { productManager } from "../helpers/ProductManager";
 
 const Home = () =>{
     
@@ -12,22 +10,29 @@ const Home = () =>{
     const [products, setProducts]= useState([])
     const [loading, setLoading] = useState(true)
 
-    useEffect(()=>{
-        
+    useEffect(()=>  {
+       setLoading(true)
 
         
-        getData()
-            .then((data)=>{
-                setProducts(data)
-                setLoading(false)
+        productManager.getProducts()
+        .then((res)=>{
+            const docs = res.docs.map((doc)=>{
+                return {...doc.data(), code: doc.id}
             })
-            .catch((err=> console.log(err)))
-
+            setProducts(docs)
+            console.log(docs)
+         })
+         .catch((err=> console.log(err)))
+         .finally(()=>{
+            setLoading(false)
+         })
+        
     },[])
 
 
      return (
         <div>
+           
             <CarouselBanner/>
             {loading
             ? <ItemListContainer items={products} loading={loading} cards={10}/>

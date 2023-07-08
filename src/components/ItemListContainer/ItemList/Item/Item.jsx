@@ -13,7 +13,7 @@ const Item = ({item}) =>{
      return (
         <div className="col-sm-6 col-md-6 col-lg-4 col-xlg-3">
             <Card>
-                <Link to={`/detail/${item.id}`} src={item.thumbnail}>
+                <Link to={`/detail/${item.code}`} src={item.thumbnail}>
                     <Card.Img variant="top" src={!category?item.thumbnail:"."+item.thumbnail}  alt={item.title}/>
                 </Link>
                 

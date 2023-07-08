@@ -1,0 +1,71 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#add_cart_button {
+  text-align: center;
+}
+#add_cart_button .addtocart {
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+  height: auto;
+  background-color: black;
+  border-color: black;
+}
+#add_cart_button .addtocart:hover {
+  background-color: #404040;
+  border-color: #404040;
+}
+#add_cart_button .disable {
+  color: lightgray;
+  background-color: white;
+  border-color: lightgray;
+}
+#add_cart_button .amount-wrapper {
+  display: flex;
+  font-size: var(--text-base);
+  border: 1px solid gainsboro;
+  border-radius: 15px 15px 15px 15px;
+  justify-content: space-around;
+  width: 45%;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 4;
+  margin-bottom: var(--spacing-xsmall);
+}
+#add_cart_button .amount-wrapper .amount-btn {
+  width: 19%;
+  font-weight: bolder;
+  font-size: x-large;
+  text-align: center;
+  z-index: index 2;
+}
+#add_cart_button .amount-wrapper .amount-btn:hover {
+  color: #404040;
+  font-weight: bolder;
+}
+#add_cart_button .amount-wrapper .disabled {
+  background-color: white;
+}
+#add_cart_button .amount-wrapper .disabled:hover {
+  background-color: white;
+  color: white;
+}
+#add_cart_button .amount-wrapper .decrease-btn {
+  border-radius: 15px 0px 0px 15px;
+}
+#add_cart_button .amount-wrapper .increase-btn {
+  border-radius: 0px 15px 15px 0px;
+}
+#add_cart_button .amount-wrapper .amount-input {
+  width: 60%;
+  border: none;
+  text-align: center;
+}/*# sourceMappingURL=AmountBtn.css.map */

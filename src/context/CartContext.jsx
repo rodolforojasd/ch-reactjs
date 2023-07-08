@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
+
 export const CartContext = createContext()
 
 const init = JSON.parse(localStorage.getItem('shoppingCart')) || []
@@ -8,13 +9,30 @@ export const CartProvider = ({children}) => {
     
     const [cart,setCart] = useState(init)
 
-    const addToCart = (item) => {
-        setCart([...cart,item])
+
+    const addToCart = (item, cartPage) => {
+    debugger   
+       const inCart = isInCart(item.id) 
+       if(inCart === -1){
+            setCart([...cart, item])
+       }else if (inCart !== -1 && cartPage){
+            cart[inCart].quantity = item.quantity
+            const newCart = cart
+            setCart([...newCart])
+            
+       }else{
+           cart[inCart].quantity = cart[inCart].quantity + item.quantity
+           const newCart = cart
+           setCart([...newCart])  
+       } 
     }
 
-    const IsInCart = (id) => {
-        return  cart.find((prod)=> prod.id === id )
-         
+    const isInCart = (id) => {
+        return  cart.findIndex((prod)=> prod.id === id )
+    }
+
+    const updateCart = (item, id) => {
+      
     }
 
     const getCartCost = () => {
@@ -34,15 +52,21 @@ export const CartProvider = ({children}) => {
         setCart(cart.filter((prod)=> prod.id !== id))
     }
 
+
+
+
     useEffect(()=>{
         localStorage.setItem('shoppingCart', JSON.stringify(cart))
     },[cart])
+
+ 
 
     return (
         <CartContext.Provider value={{
                 cart,
                 addToCart,
-                IsInCart,
+                updateCart,
+                isInCart,
                 getCartCost,
                 getTotalQuantity,
                 emptyCart,
