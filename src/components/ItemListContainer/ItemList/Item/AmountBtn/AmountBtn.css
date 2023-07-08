@@ -10,6 +10,7 @@ input[type=number] {
 
 #add_cart_button {
   text-align: center;
+  margin-top: var(--spacing-xsmall);
 }
 #add_cart_button .addtocart {
   margin-left: auto;
@@ -22,6 +23,7 @@ input[type=number] {
 #add_cart_button .addtocart:hover {
   background-color: #404040;
   border-color: #404040;
+  color: white;
 }
 #add_cart_button .disable {
   color: lightgray;
@@ -31,6 +33,7 @@ input[type=number] {
 #add_cart_button .amount-wrapper {
   display: flex;
   font-size: var(--text-base);
+  font-weight: bold;
   border: 1px solid gainsboro;
   border-radius: 15px 15px 15px 15px;
   justify-content: space-around;
@@ -41,14 +44,16 @@ input[type=number] {
   margin-bottom: var(--spacing-xsmall);
 }
 #add_cart_button .amount-wrapper .amount-btn {
-  width: 19%;
-  font-weight: bolder;
-  font-size: x-large;
+  width: 45%;
+  box-sizing: content-box;
+  font-size: 1.7em;
   text-align: center;
   z-index: index 2;
+  margin: 0;
+  padding: 0;
 }
 #add_cart_button .amount-wrapper .amount-btn:hover {
-  color: #404040;
+  color: #a3a3a3;
   font-weight: bolder;
 }
 #add_cart_button .amount-wrapper .disabled {
@@ -65,7 +70,8 @@ input[type=number] {
   border-radius: 0px 15px 15px 0px;
 }
 #add_cart_button .amount-wrapper .amount-input {
-  width: 60%;
+  width: 100%;
   border: none;
   text-align: center;
+  font-size: var(--text-base);
 }/*# sourceMappingURL=AmountBtn.css.map */

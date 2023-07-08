@@ -1,0 +1,23 @@
+.img-container .product-img {
+  height: 40vh;
+  width: auto;
+}
+
+.card-body p {
+  -webkit-text-size-adjust: auto;
+  font-size: 2.3em;
+}
+
+.btn-wrappers {
+  text-align: center;
+  margin-top: var(--spacing-xsmall);
+}
+.btn-wrappers .btn {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: var(--spacing-xsmall);
+  padding: var(--spacing-xsmall);
+  width: 45%;
+  font-size: var(--text-base);
+}/*# sourceMappingURL=ItemDetail.css.map */

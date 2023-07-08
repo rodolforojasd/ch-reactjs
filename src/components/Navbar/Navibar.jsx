@@ -1,10 +1,11 @@
-import "./Navbar.scss"
+import "./Navibar.scss"
 import Searchbar from "./Searchbar/Searchbar"
 import CartWidget from "../CartWidget/CartWidget"
 import BigLogo from "../../assets/icons/logo.webp"
 import SmallLogo from "../../assets/icons/faviconb.svg"
 import {LinkContainer} from 'react-router-bootstrap'
 import {Navbar, Nav, Container} from 'react-bootstrap'
+
 
 
 
@@ -28,17 +29,20 @@ const Navibar = () =>{
                 
             </div>
 
-            <Navbar id ="nav-menu" className="navbar navbar-expand-lg bg-body-tertiary">
+            <Navbar expand = "lg" id ="nav-menu" className="navbar navbar-expand-lg bg-body-tertiary">
                 <Container fluid>
-                    <LinkContainer to={"/"}>
-                        <Navbar.Brand >
+                    
+                    <Navbar.Brand >
+                        <LinkContainer to={"/"}>
                             <img id="logo-small" src={SmallLogo} alt="small logo for mobile"/>
-                        </Navbar.Brand>
-                    </LinkContainer>
-                    <i className="bi bi-person-fill"></i>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
+                        </LinkContainer>
+                    </Navbar.Brand>
+                    <LinkContainer to={"/cart"}><CartWidget id="mobile-cart"/></LinkContainer>
+
+                    <Navbar.Toggle aria-controls="navbarScroll"/>
+                    <Navbar.Collapse id="navbarScroll">
+                        <Nav className="me-auto"
+                        navbarScroll>
                             <LinkContainer  to="/products/whiskies">
                                 <Nav.Link>Whiskies</Nav.Link>
                             </LinkContainer>
@@ -78,7 +82,7 @@ const Navibar = () =>{
                         </Nav>
                     </ Navbar.Collapse>
 
-                    <LinkContainer to={"/cart"}><CartWidget id="mobile-cart"/></LinkContainer>
+                    
                 </Container>
                     
 

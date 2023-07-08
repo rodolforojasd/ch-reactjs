@@ -11,7 +11,7 @@ export const CartProvider = ({children}) => {
 
 
     const addToCart = (item, cartPage) => {
-    debugger   
+      
        const inCart = isInCart(item.id) 
        if(inCart === -1){
             setCart([...cart, item])
@@ -36,7 +36,7 @@ export const CartProvider = ({children}) => {
     }
 
     const getCartCost = () => {
-        return cart.reduce((acc,prod) => acc+prod.price,0)
+        return cart.reduce((acc,prod) => acc+(prod.price*prod.quantity),0)
     }
 
     const getTotalQuantity = () => {

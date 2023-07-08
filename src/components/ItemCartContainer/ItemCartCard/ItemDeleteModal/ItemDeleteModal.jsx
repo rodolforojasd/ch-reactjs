@@ -26,11 +26,14 @@ const ItemDeleteModal = ({item}) =>{
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title></Modal.Title>
+          <Modal.Title>¿Quieres borrar este producto?</Modal.Title>
         </Modal.Header>
-        <Modal.Body>¿Quieres borrar este producto?</Modal.Body>
+        <Modal.Body></Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleClose} 
+          style={
+            {backgroundColor:'grey'
+            }}>
             Cerrar
           </Button>
           <Button variant="primary" onClick={handleDeleteItem}>

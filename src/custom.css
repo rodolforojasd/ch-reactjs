@@ -19,8 +19,8 @@
   --text-xlarge:3.2rem;
   --text-large: 3rem;
   --text-medium: 2.1rem;
-  --text-base: 1.8rem;
-  --text-small: 1.4rem;
+  --text-base: 1.4rem;
+  --text-small: 1.3rem;
   /* Spacings */
   --spacing-xlarge: 6rem;
   --spacing-large: 2.4rem;
@@ -70,6 +70,9 @@ body .btn-primary {
   --bs-btn-font-size: var(--text-small);
   --bs-btn-padding: var(--spacing-medium) ;
 }
+body .btn-secondary {
+  --bs-btn-bg:lightgrey;
+}
 body main {
   margin: 0px;
   padding: 0px;
@@ -107,10 +110,9 @@ body h2 {
 }
 body h3 {
   font-size: var(--text-medium);
-  text-align: center;
 }
 body h4 {
-  font-size: 1.5rem;
+  font-size: var(--text-base);
 }
 body p {
   font-size: var(--text-base);

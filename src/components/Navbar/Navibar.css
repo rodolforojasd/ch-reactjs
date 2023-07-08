@@ -26,6 +26,7 @@
   font-size: var(--text-small);
   background-color: black;
   color: white;
+  text-align: start;
 }
 #nav-menu .nav-link {
   color: white;
@@ -141,4 +142,4 @@
   #nav-menu #cart-wrapper {
     display: none;
   }
-}/*# sourceMappingURL=Navbar.css.map */
+}/*# sourceMappingURL=Navibar.css.map */

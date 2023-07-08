@@ -1,0 +1,23 @@
+#checkout-cart-wrapper, .checkout_total_wrapper {
+  position: sticky;
+  width: 100vw;
+  margin: 0;
+  padding: var(--spacing-small);
+  bottom: 0;
+  color: black;
+  background-color: white;
+  box-shadow: 1px -10px 29px -4px rgba(140, 140, 140, 0.49);
+}
+#checkout-cart-wrapper .checkout-btn-wrapper, .checkout_total_wrapper .checkout-btn-wrapper {
+  margin: var(--spacing-small);
+}
+#checkout-cart-wrapper .checkout-btn-wrapper #checkout-button, .checkout_total_wrapper .checkout-btn-wrapper #checkout-button {
+  margin: 0;
+  font-size: var(--text-base);
+  height: var(--text-base);
+  width: var(--text-base);
+}
+#checkout-cart-wrapper .text-button :hover, .checkout_total_wrapper .text-button :hover {
+  color: gray;
+  font-weight: bold;
+}/*# sourceMappingURL=CheckoutBtn.css.map */

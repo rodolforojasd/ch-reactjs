@@ -11,10 +11,10 @@ const Item = ({item}) =>{
     const category = useParams()
 
      return (
-        <div className="col-sm-6 col-md-6 col-lg-4 col-xlg-3">
+        <div className = "col-sm-6 col-md-4 col-lg-4 col-xlg-3">
             <Card>
                 <Link to={`/detail/${item.code}`} src={item.thumbnail}>
-                    <Card.Img variant="top" src={!category?item.thumbnail:"."+item.thumbnail}  alt={item.title}/>
+                    <Card.Img variant="top" className={item.category === "burbujas"?"vert-img":null} src={!category?item.thumbnail:"."+item.thumbnail}  alt={item.title}/>
                 </Link>
                 
                 <Card.Body>
