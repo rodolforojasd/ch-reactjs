@@ -82,6 +82,10 @@
                         padding-left: var(--spacing-xsmall);
                     }        
             }
+
+            #mobile-empty-cart{
+                display: none !important;
+            }
         }
         
         
@@ -141,6 +145,9 @@
                     height:auto;
                 }  
             }
+        }
+        #desktop-empty-cart{
+            display: none !important;
         }
         
         #nav-menu{

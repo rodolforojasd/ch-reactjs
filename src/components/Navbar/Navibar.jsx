@@ -3,9 +3,11 @@ import Searchbar from "./Searchbar/Searchbar"
 import CartWidget from "../CartWidget/CartWidget"
 import BigLogo from "../../assets/icons/logo.webp"
 import SmallLogo from "../../assets/icons/faviconb.svg"
+import { useState, useContext } from "react"
 import {LinkContainer} from 'react-router-bootstrap'
 import {Navbar, Nav, Container} from 'react-bootstrap'
-
+import useIntersectionObserver from '@react-hook/intersection-observer'
+import { CartContext } from "../../context/CartContext"
 
 
 
@@ -14,29 +16,46 @@ import {Navbar, Nav, Container} from 'react-bootstrap'
 
 const Navibar = () =>{
      
+    const [ref, setRef] = useState()
+    const {isIntersecting} = useIntersectionObserver(ref)
+    const cart = useContext(CartContext)
+    console.log(cart)
+
      return (
         <header id="header" className="header-area">
-            <div id="header-logo-area" className="row">
-                <div className="col">
+            <div  id="header-logo-area" className="row" >
+                <span ref={setRef}></span>
+                {isIntersecting
+                ?
+                (<div className="col">
                     <LinkContainer to={"/"}>
                         <img className="icon" id="big-logo"  src={BigLogo} alt="logo brand for desktop"/>
                     </LinkContainer>
-                </div>
-
-                <LinkContainer to={"/cart"}>
-                    <CartWidget id="desktop-cart"/>
+                </div>)
+                :
+                null
+                }
+                <LinkContainer to={"/cart"} > 
+                    <CartWidget id= "desktop-cart" />
                 </LinkContainer>
-                
             </div>
 
             <Navbar expand = "lg" id ="nav-menu" className="navbar navbar-expand-lg bg-body-tertiary">
                 <Container fluid>
                     
-                    <Navbar.Brand >
-                        <LinkContainer to={"/"}>
-                            <img id="logo-small" src={SmallLogo} alt="small logo for mobile"/>
-                        </LinkContainer>
-                    </Navbar.Brand>
+                 
+                        {!isIntersecting
+                        ?
+                        (  <Navbar.Brand >
+                                <LinkContainer to={"/"}>
+                                    <img id="logo-small" src={SmallLogo} alt="small logo for mobile"/>
+                                </LinkContainer>
+                            </Navbar.Brand>
+                        )
+                        : null
+                        }
+                        
+                    
                     <LinkContainer to={"/cart"}><CartWidget id="mobile-cart"/></LinkContainer>
 
                     <Navbar.Toggle aria-controls="navbarScroll"/>
